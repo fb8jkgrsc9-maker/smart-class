@@ -14,7 +14,8 @@ export type NavSection =
   | 'activities'
   | 'community'
   | 'reports'
-  | 'settings';
+  | 'settings'
+  | 'showcase';
 
 export type AttendanceStatus = 'present' | 'absent' | 'late' | 'excused';
 

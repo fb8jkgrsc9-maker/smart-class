@@ -10,6 +10,7 @@ import {
   Menu,
   MonitorPlay,
   Moon,
+  Presentation,
   ScrollText,
   ShieldCheck,
   Shuffle,
@@ -37,6 +38,7 @@ import { CommunityView } from './components/CommunityView';
 import { ReportsView } from './components/ReportsView';
 import { SettingsView } from './components/SettingsView';
 import { PresentationMode } from './components/PresentationMode';
+import { PlatformShowcaseDeck } from './components/PlatformShowcaseDeck';
 
 const NAV_ITEMS: { id: NavSection; labelKey: string; icon: React.ComponentType<{ className?: string }> }[] = [
   { id: 'dashboard', labelKey: 'navDashboard', icon: LayoutDashboard },
@@ -51,6 +53,7 @@ const NAV_ITEMS: { id: NavSection; labelKey: string; icon: React.ComponentType<{
   { id: 'community', labelKey: 'navCommunity', icon: ScrollText },
   { id: 'reports', labelKey: 'navReports', icon: BarChart3 },
   { id: 'settings', labelKey: 'navSettings', icon: Database },
+  { id: 'showcase', labelKey: 'navShowcase', icon: Presentation },
 ];
 
 const AppShell: React.FC = () => {
@@ -100,6 +103,8 @@ const AppShell: React.FC = () => {
         return <ReportsView />;
       case 'settings':
         return <SettingsView />;
+      case 'showcase':
+        return <PlatformShowcaseDeck />;
       default:
         return <DashboardView />;
     }

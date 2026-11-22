@@ -7,6 +7,7 @@ import {
   Circle,
   ClipboardList,
   MonitorPlay,
+  Presentation,
   Trophy,
   Users,
   Volume2,
@@ -140,14 +141,24 @@ export const DashboardView: React.FC = () => {
                 <span>Monitor: {state.settings.monitorName}</span>
               </div>
 
-              <button
-                type="button"
-                onClick={() => setPresentationMode(true)}
-                className="inline-flex items-center gap-2 rounded-lg bg-[#C9972C] px-4 py-2 text-xs font-semibold text-slate-950 transition-colors hover:bg-[#d8a73d] whitespace-nowrap shrink-0"
-              >
-                <MonitorPlay className="h-4 w-4" />
-                {t(language, 'projectorMode')}
-              </button>
+              <div className="flex flex-wrap items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setActiveSection('showcase')}
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-white/10 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-white/20 whitespace-nowrap shrink-0"
+                >
+                  <Presentation className="h-4 w-4 text-[#E8C872]" />
+                  {t(language, 'openDeck')}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setPresentationMode(true)}
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#C9972C] px-4 py-2 text-xs font-semibold text-slate-950 transition-colors hover:bg-[#d8a73d] whitespace-nowrap shrink-0"
+                >
+                  <MonitorPlay className="h-4 w-4" />
+                  {t(language, 'projectorMode')}
+                </button>
+              </div>
             </div>
           </div>
 
